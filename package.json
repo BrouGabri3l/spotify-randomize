@@ -1,0 +1,71 @@
+{
+  "name": "spotify",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --passWithNoTests --no-cache --runInBand --bail",
+    "test:watch": "npm test -- --watch",
+    "lint": "eslint source --fix",
+    "prepare": "husky install",
+    "release": "standard-version",
+    "cypress:open": "cypresse open",
+    "dev": "env-cmd next dev $npm_package_config_nextpath",
+    "build": "env-cmd --no-override next build $npm_package_config_nextpath && next export $npm_package_config_nextpath -o dist",
+    "start": "env-cmd next start $npm_package_config_nextpath"
+  },
+  "author": "Gabriel Rodrigues",
+  "license": "ISC",
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": "eslint --fix --quiet",
+    "*.{ts,tsx,js,jsx,css,md}": "prettier --write",
+    "*.{spec,test}.{ts,tsx,js,jsx}": "npm run test"
+  },
+  "config": {
+    "sourcepath": "./source",
+    "nextpath": "./source/presentation"
+  },
+  "dependencies": {
+    "next": "13.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "axios": "1.3.4",
+    "js-cookie": "3.0.1",
+    "qs": "6.11.1"
+  },
+  "devDependencies": {
+    "dotenv": "16.0.3",
+    "@commitlint/config-conventional": "17.4.4",
+    "env-cmd": "10.1.0",
+    "standard-version": "9.5.0",
+    "cypress": "8.5.0",
+    "husky": "7.0.4",
+    "jest": "27.3.1",
+    "prettier": "2.4.1",
+    "typescript": "4.4.4",
+    "eslint": "7.32.0",
+    "@babel/plugin-proposal-decorators": "7.17.2",
+    "@babel/core": "7.17.5",
+    "@types/jest": "27.4.0",
+    "@typescript-eslint/eslint-plugin": "4.32.0",
+    "@typescript-eslint/parser": "4.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-config-standard-with-typescript": "21.0.1",
+    "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-jest": "25.2.3",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "5.1.1",
+    "eslint-plugin-react": "7.26.1",
+    "jest-mock-extended": "2.0.4",
+    "lint-staged": "11.2.6",
+    "ts-jest": "27.0.7",
+    "@types/react": "18.0.31",
+    "@next/bundle-analyzer": "13.2.4",
+    "@svgr/webpack": "7.0.0",
+    "@next/eslint-plugin-next": "13.2.4",
+    "tailwindcss": "latest",
+    "postcss": "latest",
+    "postcss-import": "15.1.0",
+    "autoprefixer": "latest"
+  }
+}
