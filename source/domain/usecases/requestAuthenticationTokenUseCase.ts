@@ -3,7 +3,7 @@ import { TApplicationError } from "@/core/Errors";
 import { IUsecase } from "@/core/Usecase";
 import { IAuthenticationRepository } from "../repositories/authenticationRepository";
 
-export class requestAuthenticationTokenUseCase implements IUsecase {
+export class RequestAuthenticationTokenUseCase implements IUsecase {
   constructor(
     private readonly _authenticationRepository: IAuthenticationRepository
   ) {}
